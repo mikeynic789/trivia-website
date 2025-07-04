@@ -1142,7 +1142,7 @@ music1.push({
 
 	music1.push({
 	question:"<p>What is Queen's most popular song?</p>",
-	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">We Are Champions</label>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">We Are The Champions</label>",
 	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"2\"><label for=\"2\">Bohemian Rhapsody</label>",
 	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">We Will Rock You</label>",
 	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Don't Stop Me Now</label>"
