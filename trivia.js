@@ -603,7 +603,7 @@ math5.push({
 
 
 math5.push({
-	question:"<p>What are vectors that do not change durection under transformations called?</p>",
+	question:"<p>What are vectors that do not change direction under transformations called?</p>",
 	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">constants</label>",
 	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">identity vectors</label>",
 	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"3\"><label for=\"3\">eigenvectors</label>",
