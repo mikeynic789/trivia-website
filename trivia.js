@@ -671,7 +671,7 @@ tvShows1.push({
 	question:"<p>Who is Batman's sidekick?</p>",
 	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Nightwing</label>",
 	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Green Lantern</label>",
-	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Boy Wonder</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Wonder Boy</label>",
 	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"4\"><label for=\"4\">Robin</label>"
 })
 
