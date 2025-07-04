@@ -1270,7 +1270,7 @@ music4.push({
 })
 
 music4.push({
-	question:"<p>What song plays at Yankee Stadium when the Yankees win?/p>",
+	question:"<p>What song plays at Yankee Stadium when the Yankees win?</p>",
 	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">My Way</label>",
 	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">You Make me Feel So Young</label>",
 	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Fly Me To The Moon</label>",
