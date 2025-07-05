@@ -1251,7 +1251,7 @@ music4.push({
 })
 
 music4.push({
-	question:"<p>The bullfrog was a good friend of mine. I never understood a word he said, but I helped him drink his wine. What was the bullfrog's name?</p>",
+	question:"<p>The bullfrog was a good friend of mine. I never understood a single word he said, but I helped him drink his wine. What was the bullfrog's name?</p>",
 	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Lewis</label>",
 	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Louis</label>",
 	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"3\"><label for=\"3\">Jeremiah</label>",
