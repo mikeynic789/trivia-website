@@ -81,6 +81,7 @@ const shows=document.querySelector(".shows");
 const music=document.querySelector(".music");
 const sports=document.querySelector(".sports");
 const movies=document.querySelector(".movies");
+const videoGames=document.querySelector(".video-games");
 rulesText.innerHTML="";
 
 
