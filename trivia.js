@@ -60,6 +60,9 @@ function catSelect(n) {					//select categories
 		if (n=="Sports") {
 			catOrder.push(sports)
 		}
+		if (n=="Video Games") {
+			catOrder.push(videoGames)
+		}
 	};
 	catsOn.innerHTML=`<h3>Selected Categories</h3> <p>${categories[0]}      ${categories[1]}      ${categories[2]}      ${categories[3]}      ${categories[4]}</p>`
 	return
@@ -69,7 +72,7 @@ function catSelect(n) {					//select categories
 
 function showCats() { 						   //category buttons
 div1.innerHTML="<h2>Select 5 categories</h2>";
-cats.innerHTML="<button class=\"science\">Science</button> <button class=\"math\">Mathematics</button> <button class=\"shows\">TV Shows</button> <button class=\"music\">Music</button> <button class=\"sports\">Sports</button> <button class=\"movies\">Movies</button>";
+cats.innerHTML="<button class=\"science\">Science</button> <button class=\"math\">Mathematics</button> <button class=\"shows\">TV Shows</button> <button class=\"music\">Music</button> <button class=\"sports\">Sports</button> <button class=\"movies\">Movies</button> <button class=\"video-games\">Video Games</button>";
 div2.innerHTML="<button class=\"im-ready\">I'm ready</button>";
 const imReady=document.querySelector(".im-ready")
 const science=document.querySelector(".science");
@@ -86,7 +89,8 @@ rulesText.innerHTML="";
 	shows.addEventListener("click",() => catSelect("TV Shows"));
 	music.addEventListener("click",() => catSelect("Music"));
 	sports.addEventListener("click",() => catSelect("Sports"));
-	movies.addEventListener("click",() => catSelect("Movies"))
+	movies.addEventListener("click",() => catSelect("Movies"));
+	videoGames.addEventListener("click",() => catSelect("Video Games"));
 imReady.addEventListener("click",() => newQuestion1());
 
 };
@@ -1545,3 +1549,232 @@ sports5.push({
 })
 
 const sports=[sports1,sports2,sports3,sports4,sports5]
+
+
+
+
+let videoGames1=[];
+
+videoGames1.push({
+	question:"<p>What is Super Mario's brother's name?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Mario</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"2\"><label for=\"2\">Luigi</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Waluigi</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Wario/label>"
+})
+
+
+videoGames1.push({
+	question:"<p>What does COD stand for?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Cry of the Deity</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Crisis of Dorado</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"3\"><label for=\"3\">Call of Duty</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Code of Destruction</label>"
+})
+
+videoGames1.push({
+	question:"<p>Which game franchise features 'Master Chief'?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Call of Duty</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Battlefield</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Portal</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"4\"><label for=\"4\">Halo</label>"
+})
+
+
+videoGames1.push({
+	question:"<p>Who is the hero of time?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Mario</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Luigi</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"3\"><label for=\"3\">Link</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Zelda</label>"
+})
+
+videoGames1.push({
+	question:"<p>Which pokémon directly evolves from Bulbasaur?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"1\"><label for=\"1\">Ivysaur</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Venusaur</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Charizard</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Torterra</label>"
+})
+
+let videoGames2=[];
+
+
+videoGames2.push({
+	question:"<p>What is the best-selling video game of all time?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Fortnite</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Assasin's Creed</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"3\"><label for=\"3\">Minecraft</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Overwatch</label>"
+})
+
+videoGames2.push({
+	question:"<p>What is Sans' brothers name?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Mettaton</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"2\"><label for=\"2\">Papyrus</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Ninten</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Chara</label>"
+})
+
+videoGames2.push({
+	question:"<p>Who says \"Thank you Mario! But our princess is in another castle!\"?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Luigi</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Mario</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"3\"><label for=\"3\">Toad</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Bowser</label>"
+})
+
+videoGames2.push({
+	question:"<p>Which video game features James Bond as the main character?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Doom 64</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Hitman</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"3\"><label for=\"3\">GoldenEye 007</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Thunderball 007</label>"
+})
+
+videoGames2.push({
+	question:"<p>Which video game series features the infamous character known as 'Purple Guy'?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Pikmin</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Mariokart</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Doom</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"4\"><label for=\"4\">Five Nights at Freddy's</label>"
+})
+
+
+let videoGames3=[];
+
+videoGames3.push({
+	question:"<p>Which of the following is not a real Mariokart track?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Maple Treeway</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Coconut Mall</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"3\"><label for=\"3\">Mushroom George</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Toad's Factory</label>"
+})
+
+videoGames3.push({
+	question:"<p>Which animal is featured in the Bloons Tower Defense games?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Pigs</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"2\"><label for=\"2\">Monkeys</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Wolves</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Elephants</label>"
+})
+
+videoGames3.push({
+	question:"<p>What planet does Kirby come from?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"1\"><label for=\"1\">Pop Star</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Dream Land</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Robobot</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Patch Land</label>"
+})
+
+videoGames3.push({
+	question:"<p>What is the first form of fast travel in Hollow Knight?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Teleportation</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Roach Riding</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Beetle Boulevard</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"4\"><label for=\"4\">Stag Station</label>"
+})
+
+videoGames3.push({
+	question:"<p>What is the most hostile species of slime?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Black Slime</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Sludge Slime</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"3\"><label for=\"3\">Tarr Slime</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Ganondorf</label>"
+})
+
+
+let videoGames4=[];
+
+
+videoGames4.push({
+	question:"<p>What is Joel Miller's daughter's name?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Ellie</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"2\"><label for=\"2\">Sarah</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Ashley</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Angie</label>"
+})
+
+videoGames4.push({
+	question:"<p>Which pokémon has the power to move continents?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Arceus</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Groudon</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Garchomp</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"4\"><label for=\"4\">Regigigas</label>"
+})
+
+videoGames4.push({
+	question:"<p>Which of the following is not one of the Pac-man ghosts?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Inky</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Pinky</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"3\"><label for=\"3\">Dinky</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Blinky</label>"
+})
+
+videoGames4.push({
+	question:"<p>How did Felix White prove Henry Stickmin not guilty?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"1\"><label for=\"1\">The knot was tied on the outside of the bag</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">The truck drove to the wrong location</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">He framed someone else</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">He didn't</label>"
+})
+
+
+
+
+videoGames4.push({
+	question:"<p>Which character iconically dematerializes into separate pieces and rematerializes in the middle of combat?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Dracula</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"2\"><label for=\"2\">Yellow Devil</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Ganondorf</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Andross</label>"
+})
+
+
+let videoGames5=[];
+
+
+videoGames5.push({
+	question:"<p>Who's initial on his has was drawn backwards on the cover art for 'Mariokart: Double Dash'?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Mario</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"2\"><label for=\"2\">Luigi</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Wario</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Waluigi</label>"
+})
+
+
+videoGames5.push({
+	question:"<p>What color is Don Pianta?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Blue</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Pink</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Yellow</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"4\"><label for=\"4\">Orange</label>"
+})
+
+
+videoGames5.push({
+	question:"<p>What planet was Bart Torgal crash land on?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Zebes</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"2\"><label for=\"2\">4546-B</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Tallon-IV</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Duna</label>"
+})
+
+videoGames5.push({
+	question:"<p>What Yoshi's full name?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Yoshi</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">T. Yoshisaurus Bowsabustus</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"3\"><label for=\"3\">T. Yoshisaur Munchakoopas</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Dragonsaur Yoshidon</label>"
+})
+
+videoGames5.push({
+	question:"<p>Who is the oldest recurring video game character?</p>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"1\"><label for=\"1\">Mr. Game & Watch</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Pac-man</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Megaman</label>",
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Donkey Kong</label>"
+})
+
+
+const videoGames=[videoGames1,videoGames2,videoGames3,videoGames4,videoGames5];
