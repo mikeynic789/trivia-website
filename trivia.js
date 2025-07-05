@@ -222,7 +222,7 @@ science1.push({question:"<p>What is the transition from liquid to gas called?</p
 science1.push({
 	question:"<p>What is the chemical symbol for oxygen?</p>",
 	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Ox</label>",
-	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">oy</label>",
+	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Oy</label>",
 	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"3\"><label for=\"3\">O</label>",
 	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">L</label>"
 })
@@ -1217,7 +1217,7 @@ music3.push({
 })
 
 music3.push({
-	question:"<p>Where was the Woodstock performed?</p>",
+	question:"<p>Where was the Woodstock concert performed?</p>",
 	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"1\"><label for=\"1\">Max Yasgur's farm</label>",
 	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Madison Square Garden</label>",
 	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Woodstock, New York</label>",
