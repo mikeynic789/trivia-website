@@ -1736,7 +1736,7 @@ let videoGames5=[];
 
 
 videoGames5.push({
-	question:"<p>Who's initial on his has was drawn backwards on the cover art for 'Mariokart: Double Dash'?</p>",
+	question:"<p>Who's initial on his hat was drawn backwards on the cover art for 'Mariokart: Double Dash'?</p>",
 	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Mario</label>",
 	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"2\"><label for=\"2\">Luigi</label>",
 	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Wario</label>",
