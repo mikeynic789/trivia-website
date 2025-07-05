@@ -339,7 +339,7 @@ science4.push({
 })
 
 science4.push({
-	question:"<p>What us Erik Erickson's sixth stage of development?</p>",
+	question:"<p>What us Erik Erikson's sixth stage of development?</p>",
 	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">integrity vs. despair</label>",
 	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">trust vs. mistrust</label>",
 	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"3\"><label for=\"3\">intimacy vs. isolation</label>",
