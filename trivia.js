@@ -28,6 +28,7 @@ function resetStorage() {
 	asked=JSON.parse(localStorage.getItem("asked"));
 	asked=[];
 	localStorage.setItem("asked",JSON.stringify(asked));
+	notes.innerHTML="<p>Reset memory</p>"
 }
 reset.addEventListener("click",() => resetStorage());
 function rules() {							//display rules after pressing start
@@ -138,7 +139,7 @@ x=Math.floor(Math.random()*5);
 count++
 if (count==100) {
 	asked=[];
-	notes.innerHTML="reset";
+	notes.innerHTML="<p>reset</p>";
 }
 }
 
@@ -178,7 +179,7 @@ x=Math.floor(Math.random()*5);
 count++
 if (count==100) {
 	asked=[];
-	notes.innerHTML="reset";
+	notes.innerHTML="<p>reset</p>";
 }
 }
 
