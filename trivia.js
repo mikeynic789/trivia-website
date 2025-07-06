@@ -24,7 +24,7 @@ let categories=[];
 let catOrder=[];
 localStorage.setItem("asked",JSON.stringify(asked));
 function resetStorage() {
-	JSON.parse(localStorage.getItem("asked"));
+	asked=JSON.parse(localStorage.getItem("asked"));
 	asked=[];
 	localStorage.setItem("asked",JSON.stringify(asked));
 }
@@ -130,7 +130,7 @@ notes.innerHTML="<p>Select 5 categories</p>";
 notes.innerHTML="<p></p>"
 			//show first question
 	let x=Math.floor(Math.random()*5);
-	JSON.parse(localStorage.getItem("asked"))
+	asked=JSON.parse(localStorage.getItem("asked"))
 while (asked.includes(catOrder[c][q][x].question)) {
 x=Math.floor(Math.random()*5);
 count++
@@ -169,7 +169,7 @@ if (!selected) {
 notes.innerHTML="<p>select an answer before submitting</p>"
 } else {notes.innerHTML=""
 	let x=Math.floor(Math.random()*5)
-JSON.parse(localStorage.getItem("asked"))
+asked=JSON.parse(localStorage.getItem("asked"))
 while (asked.includes(catOrder[c][q][x].question)) {
 x=Math.floor(Math.random()*5);
 count++
