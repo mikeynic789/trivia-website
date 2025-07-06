@@ -110,3 +110,9 @@ input[type="radio"]:checked + label {
 	width:fit-content;
 
 }
+
+
+.reset {
+	margin-left:auto;
+	margin-right:auto;
+}
