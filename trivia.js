@@ -12,6 +12,7 @@ const score=document.querySelector(".score")
 const current=document.querySelector(".current-category");
 const notes=document.querySelector(".notifications");
 const rulesText=document.querySelector(".rules")
+const reset=document.querySelector(".reset-btn")
 let currentString;
 let correct=0;
 let asked=JSON.parse(localStorage.getItem("asked")) || [];
