@@ -17,6 +17,7 @@ let currentString;
 let correct=0;
 let asked=JSON.parse(localStorage.getItem("asked")) || [];
 let qnum=0;
+let count=0;
 let store;
 let s=0;
 //let x;
