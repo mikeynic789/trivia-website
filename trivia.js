@@ -14,12 +14,20 @@ const notes=document.querySelector(".notifications");
 const rulesText=document.querySelector(".rules")
 let currentString;
 let correct=0;
+let asked=JSON.parse(localStorage.getItem("asked")) || [];
 let qnum=0;
 let store;
 let s=0;
 //let x;
 let categories=[];
 let catOrder=[];
+localStorage.setItem("asked",JSON.stringify(asked));
+function resetStorage() {
+	JSON.parse(localStorage.getItem("asked"));
+	asked=[];
+	localStorage.setItem("asked",JSON.stringify(asked));
+}
+reset.addEventListener("click",() => resetStorage());
 function rules() {							//display rules after pressing start
 	div1.innerHTML="<h1>How to play</h1>"; 
 	rulesText.innerHTML="<p>You will select 5 categories of trivia and you will get 5 questions per category. Each set of 5 questions will start very easy and increasingly get more difficult.</p><br><p>Some questions are very easy and some are very hard, you must answer at least 18 questions correctly to win. Good luck!</p>";
@@ -121,6 +129,18 @@ notes.innerHTML="<p>Select 5 categories</p>";
 notes.innerHTML="<p></p>"
 			//show first question
 	let x=Math.floor(Math.random()*5);
+	JSON.parse(localStorage.getItem("asked"))
+while (asked.includes(catOrder[c][q][x].question)) {
+x=Math.floor(Math.random()*5);
+count++
+if (count==100) {
+	asked=[];
+	notes.innerHTML="reset";
+}
+}
+
+asked.push(catOrder[c][q][x].question)
+localStorage.setItem("asked",JSON.stringify(asked));
 	div1.innerHTML="<h2></h2>";
 currentString=`<h3>${categories[c]}</h3>`;
 	current.innerHTML=currentString;
@@ -148,7 +168,18 @@ if (!selected) {
 notes.innerHTML="<p>select an answer before submitting</p>"
 } else {notes.innerHTML=""
 	let x=Math.floor(Math.random()*5)
+JSON.parse(localStorage.getItem("asked"))
+while (asked.includes(catOrder[c][q][x].question)) {
+x=Math.floor(Math.random()*5);
+count++
+if (count==100) {
+	asked=[];
+	notes.innerHTML="reset";
+}
+}
 
+asked.push(catOrder[c][q][x].question)
+localStorage.setItem("asked",JSON.stringify(asked));
 
 quest.innerHTML=catOrder[c][q][x].question;
 choice1.innerHTML=catOrder[c][q][x].choice1;
