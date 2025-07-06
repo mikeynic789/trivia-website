@@ -17,7 +17,7 @@ let currentString;
 let correct=0;
 let asked=JSON.parse(localStorage.getItem("asked")) || [];
 let qnum=0;
-let count=0;
+//let count=0;
 let store;
 let s=0;
 //let x;
@@ -130,6 +130,7 @@ notes.innerHTML="<p>Select 5 categories</p>";
 }
 notes.innerHTML="<p></p>"
 			//show first question
+	let count=0;
 	let x=Math.floor(Math.random()*5);
 	asked=JSON.parse(localStorage.getItem("asked"))
 while (asked.includes(catOrder[c][q][x].question)) {
@@ -171,6 +172,7 @@ notes.innerHTML="<p>select an answer before submitting</p>"
 } else {notes.innerHTML=""
 	let x=Math.floor(Math.random()*5)
 asked=JSON.parse(localStorage.getItem("asked"))
+	let count=0;
 while (asked.includes(catOrder[c][q][x].question)) {
 x=Math.floor(Math.random()*5);
 count++
