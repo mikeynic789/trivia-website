@@ -121,3 +121,15 @@ input[type="radio"]:checked + label {
 .reset-btn {
 	margin-left:auto;
 	margin-right:auto;
+}
+
+
+
+.stats {
+	margin-left:auto;
+	margin-right:auto;
+	width:fit-content;
+}
+	
+
+
