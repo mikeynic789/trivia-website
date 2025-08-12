@@ -56,7 +56,7 @@ function statsFunc() {
 	gamesLost=JSON.parse(localStorage.getItem("gamesLost"));
 	gamesPlayed=JSON.parse(localStorage.getItem("gamesPlayed"));
 	let winp=gamesWon/gamesPlayed
-	div2.innerHTML=`<p>Games won: ${gamesWon)}<br>
+	div2.innerHTML=`<p>Games won: ${gamesWon}<br>
  Games lost: ${gamesLost}<br>
  Games played: ${gamesPlayed}<br>
  Win %: ${winp.toFixed(3)}</p>`;
