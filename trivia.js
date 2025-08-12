@@ -36,7 +36,7 @@ function resetStorage() {
 	asked=JSON.parse(localStorage.getItem("asked"));
 	asked=[];
 	localStorage.setItem("asked",JSON.stringify(asked));
-	notes.innerHTML="<p>Reset memory</p>"
+	notes.innerHTML="<p>Question memory cleared</p>"
 }
 reset.addEventListener("click",() => resetStorage());
 function rules() {							//display rules after pressing start
@@ -45,6 +45,7 @@ function rules() {							//display rules after pressing start
 	div2.innerHTML="<button class=\"start-trivia\">Begin</button>";
 	const ready=document.querySelector(".start-trivia");
 	ready.addEventListener("click",() => showCats())
+	statsDiv.innerHTML=`<p></p>
 };
 
 start.addEventListener("click",() => rules());
