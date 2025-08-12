@@ -13,6 +13,7 @@ const current=document.querySelector(".current-category");
 const notes=document.querySelector(".notifications");
 const rulesText=document.querySelector(".rules");
 const reset=document.querySelector(".reset-btn");
+const statsDiv=document.querySelector(".stats");
 const stats=document.querySelector(".stats-btn");
 let gamesWon=JSON.parse(localStorage.getItem("gamesWon")) || 0;
 let gamesLost=JSON.parse(localStorage.getItem("gamesLost")) || 0;
@@ -50,6 +51,19 @@ start.addEventListener("click",() => rules());
 
 
 function stats() {
+	div2.innerHTML=`<p>Games won: ${localStorage.getItem("gamesWon")}<br>Games lost: ${localStorage.getItem("gamesLost")}<br>Games played: ${localStorage.getItem("gamesPlayed"}</p>`;
+	statsDiv.innerHTML=`<button class="back-btn">Back</button>`;
+
+	backBtn=document.querySelector(".back-btn");
+}
+
+function statsBack() {
+	div2.innerHTML=`<button class="start-button">Start</button>`;
+	statsDiv.innerHTML=`<button class="stats-btn">Stats</button>`;
+ 	const stats=document.querySelector(".stats-btn");
+	const start=document.querySelector(".start-button");   
+}
+	
 	
 	
 
