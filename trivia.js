@@ -11,8 +11,13 @@ const choice4=document.querySelector(".choice-4");
 const score=document.querySelector(".score")
 const current=document.querySelector(".current-category");
 const notes=document.querySelector(".notifications");
-const rulesText=document.querySelector(".rules")
-const reset=document.querySelector(".reset-btn")
+const rulesText=document.querySelector(".rules");
+const reset=document.querySelector(".reset-btn");
+const statsDiv=document.querySelector(".stats");
+const stats=document.querySelector(".stats-btn");
+let gamesWon=JSON.parse(localStorage.getItem("gamesWon")) || 0;
+let gamesLost=JSON.parse(localStorage.getItem("gamesLost")) || 0;
+let gamesPlayed=JSON.parse(localStorage.getItem("gamesPlayed")) || 0;
 let currentString;
 let correct=0;
 let asked=JSON.parse(localStorage.getItem("asked")) || [];
@@ -24,11 +29,14 @@ let s=0;
 let categories=[];
 let catOrder=[];
 localStorage.setItem("asked",JSON.stringify(asked));
+localStorage.setItem("gamesWon",JSON.stringify(gamesWon));
+localStorage.setItem("gamesLost",JSON.stringify(gamesLost));
+localStorage.setItem("gamesPlayed",JSON.stringify(gamesPlayed));
 function resetStorage() {
 	asked=JSON.parse(localStorage.getItem("asked"));
 	asked=[];
 	localStorage.setItem("asked",JSON.stringify(asked));
-	notes.innerHTML="<p>Reset memory</p>"
+	notes.innerHTML="<p>Question memory cleared</p>"
 }
 reset.addEventListener("click",() => resetStorage());
 function rules() {							//display rules after pressing start
@@ -37,9 +45,33 @@ function rules() {							//display rules after pressing start
 	div2.innerHTML="<button class=\"start-trivia\">Begin</button>";
 	const ready=document.querySelector(".start-trivia");
 	ready.addEventListener("click",() => showCats())
+	statsDiv.innerHTML=`<p></p>`
 };
 
 start.addEventListener("click",() => rules());
+
+
+function statsFunc() {
+	div2.innerHTML=`<p>Games won: ${localStorage.getItem("gamesWon")}<br>Games lost: ${localStorage.getItem("gamesLost")}<br>Games played: ${localStorage.getItem("gamesPlayed")}</p>`;
+	statsDiv.innerHTML=`<button class="back-btn">Back</button>`;
+
+	const backBtn=document.querySelector(".back-btn");
+	backBtn.addEventListener("click",() => statsBack());
+}
+
+function statsBack() {
+	div2.innerHTML=`<button class="start-button">Start</button>`;
+	statsDiv.innerHTML=`<button class="stats-btn">Stats</button>`;
+ 	const stats=document.querySelector(".stats-btn");
+	const start=document.querySelector(".start-button");   
+	stats.addEventListener("click",() => statsFunc());
+	start.addEventListener("click",() => rules());
+}
+stats.addEventListener("click",() => statsFunc());
+
+	
+	
+	
 
 
 function catSelect(n) {					//select categories
@@ -78,6 +110,7 @@ function catSelect(n) {					//select categories
 	catsOn.innerHTML=`<h3>Selected Categories</h3> <p>${categories[0]}      ${categories[1]}      ${categories[2]}      ${categories[3]}      ${categories[4]}</p>`
 	return
 	};
+
 
 
 
@@ -228,12 +261,23 @@ notes.innerHTML="<p>select an answer before submitting</p>"
 if (selected.classList.contains("correct")) {
 correct=correct+1;}
 qnum=qnum+1;
+		
+gamesWon=JSON.parse(localStorage.getItem("gamesWon"));
+gamesLost=JSON.parse(localStorage.getItem("gamesLost"));
+gamesPlayed=JSON.parse(localStorage.getItem("gamesPlayed"));
 
+gamesPlayed=gamesPlayed+1
 if (correct>=18) {
+gamesWon=gamesWon+1
 quest.innerHTML=`<h3>Congratulations, you got ${correct} out of ${qnum} correct. You Win!\nReload to play again. You'll get a different set of questions every time.</h3>`;
 } else {
+gamesLost=gamesLost+1
 quest.innerHTML=`<h3>You only got ${correct} out of ${qnum} correct. You lose, but you can reload to play again. You'll get a different set of questions every time you play.`
 }
+localStorage.setItem("gamesPlayed",JSON.stringify(gamesPlayed));
+localStorage.setItem("gamesWon",JSON.stringify(gamesWon));
+localStorage.setItem("gamesLost",JSON.stringify(gamesLost));
+		
 choice1.innerHTML="<p></p>";
 choice2.innerHTML="<p></p>";
 choice3.innerHTML="<p></p>";
