@@ -1093,10 +1093,10 @@ movies2.push({
 
 movies2.push({
 	question:"<p>What is the name of Thor's hammer?</p>",
-	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"1\"><label for=\"1\">Gungnir</label>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Gungnir</label>",
 	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Stormbreaker</label>",
 	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Boulder Breaker</label>",
-	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Mjolnir</label>"
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"4\"><label for=\"4\">Mjolnir</label>"
 })
 
 movies2.push({
