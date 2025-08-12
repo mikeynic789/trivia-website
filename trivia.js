@@ -52,8 +52,22 @@ start.addEventListener("click",() => rules());
 
 
 function statsFunc() {
-	div2.innerHTML=`<p>Games won: ${localStorage.getItem("gamesWon")}<br>Games lost: ${localStorage.getItem("gamesLost")}<br>Games played: ${localStorage.getItem("gamesPlayed")}</p>`;
+	gamesWon=JSON.parse(localStorage.getItem("gamesWon"));
+	gamesLost=JSON.parse(localStorage.getItem("gamesLost"));
+	gamesPlayed=JSON.parse(localStorage.getItem("gamesPlayed"));
+	let winp=gamesWon/gamesPlayed
+	div2.innerHTML=`<p>Games won: ${gamesWon)}<br>
+ Games lost: ${gamesLost}<br>
+ Games played: ${gamesPlayed}<br>
+ Win %: ${winp.toFixed(3)}</p>`;
+	
+	localStorage.setItem("gamesWon",JSON.stringify(gamesWon));
+	localStorage.setItem("gamesLost",JSON.stringify(gamesLost));
+	localStorage.setItem("gamesPlayed",JSON.stringify(gamesPlayed));
+	
 	statsDiv.innerHTML=`<button class="back-btn">Back</button>`;
+
+	
 
 	const backBtn=document.querySelector(".back-btn");
 	backBtn.addEventListener("click",() => statsBack());
