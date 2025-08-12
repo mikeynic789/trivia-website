@@ -54,7 +54,7 @@ function statsFunc() {
 	div2.innerHTML=`<p>Games won: ${localStorage.getItem("gamesWon")}<br>Games lost: ${localStorage.getItem("gamesLost")}<br>Games played: ${localStorage.getItem("gamesPlayed")}</p>`;
 	statsDiv.innerHTML=`<button class="back-btn">Back</button>`;
 
-	backBtn=document.querySelector(".back-btn");
+	const backBtn=document.querySelector(".back-btn");
 }
 
 function statsBack() {
