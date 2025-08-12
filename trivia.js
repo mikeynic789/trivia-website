@@ -15,9 +15,15 @@ const rulesText=document.querySelector(".rules");
 const reset=document.querySelector(".reset-btn");
 const statsDiv=document.querySelector(".stats");
 const stats=document.querySelector(".stats-btn");
+
 let gamesWon=JSON.parse(localStorage.getItem("gamesWon")) || 0;
 let gamesLost=JSON.parse(localStorage.getItem("gamesLost")) || 0;
 let gamesPlayed=JSON.parse(localStorage.getItem("gamesPlayed")) || 0;
+
+let qCorrect=JSON.parse(localStorage.getItem("qCorrect")) || 0;
+let qWrong=JSON.parse(localStorage.getItem("qWrong")) || 0;
+let qTot=JSON.parse(localStorage.getItem("qTot")) || 0;
+
 let currentString;
 let correct=0;
 let asked=JSON.parse(localStorage.getItem("asked")) || [];
@@ -32,6 +38,9 @@ localStorage.setItem("asked",JSON.stringify(asked));
 localStorage.setItem("gamesWon",JSON.stringify(gamesWon));
 localStorage.setItem("gamesLost",JSON.stringify(gamesLost));
 localStorage.setItem("gamesPlayed",JSON.stringify(gamesPlayed));
+localStorage.setItem("qCorrect",JSON.stringify(qCorrect));
+localStorage.setItem("qWrong",JSON.stringify(qWrong));
+localStorage.setItem("qTot",JSON.stringify(qTot));
 function resetStorage() {
 	asked=JSON.parse(localStorage.getItem("asked"));
 	asked=[];
@@ -55,15 +64,32 @@ function statsFunc() {
 	gamesWon=JSON.parse(localStorage.getItem("gamesWon"));
 	gamesLost=JSON.parse(localStorage.getItem("gamesLost"));
 	gamesPlayed=JSON.parse(localStorage.getItem("gamesPlayed"));
-	let winp=gamesWon/gamesPlayed
-	div2.innerHTML=`<p>Games won: ${gamesWon}<br>
+
+	qCorrect=JSON.parse(localStorage.getItem("qCorrect"));
+	qWrong=JSON.parse(localStorage.getItem("qWrong"));
+	qTot=JSON.parse(localStorage.getItem("qTot"));
+	let correctp=(qCorrect/qTot)*100
+	let winp=(gamesWon/gamesPlayed)*100
+	div2.innerHTML=`<h2>Game Stats</h2><br>
+ <p>Games won: ${gamesWon}<br>
  Games lost: ${gamesLost}<br>
  Games played: ${gamesPlayed}<br>
- Win %: ${winp.toFixed(3)}</p>`;
+ Win %: ${winp.toFixed(3)}%</p><br>
+ <h2>Question Stats</h2><br>
+ <p>Answered correctly: ${qCorrect}<br>
+ Answered incorrectly: ${qWrong}<br>
+ Questions answered: ${qTot}<br>
+ Correct %: ${correctp.toFixed(3)}%</p><br>
+ <br>
+ <p>Stats are updated at the completion of each game.</p>`;
 	
 	localStorage.setItem("gamesWon",JSON.stringify(gamesWon));
 	localStorage.setItem("gamesLost",JSON.stringify(gamesLost));
 	localStorage.setItem("gamesPlayed",JSON.stringify(gamesPlayed));
+	
+	localStorage.setItem("qCorrect",JSON.stringify(qCorrect));
+	localStorage.setItem("qWrong",JSON.stringify(qWrong));
+	localStorage.setItem("qTot",JSON.stringify(qTot));
 	
 	statsDiv.innerHTML=`<button class="back-btn">Back</button>`;
 
@@ -275,6 +301,17 @@ notes.innerHTML="<p>select an answer before submitting</p>"
 if (selected.classList.contains("correct")) {
 correct=correct+1;}
 qnum=qnum+1;
+		qCorrect=JSON.parse(localStorage.getItem("qCorrect"));
+		qWrong=JSON.parse(localStorage.getItem("qWrong"));
+		qTot=JSON.parse(localStorage.getItem("qTot"));
+
+		qCorrect=qCorrect+correct;
+		qWrong=qWrong+(qnum-correct);
+		qTot=qTot+qnum;
+
+		localStorage.setItem("qCorrect",JSON.stringify(qCorrect));
+		localStorage.setItem("qWrong",JSON.stringify(qWrong));
+		localStorage.setItem("qTot",JSON.stringify(qTot));
 		
 gamesWon=JSON.parse(localStorage.getItem("gamesWon"));
 gamesLost=JSON.parse(localStorage.getItem("gamesLost"));
