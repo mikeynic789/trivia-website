@@ -45,7 +45,7 @@ function rules() {							//display rules after pressing start
 	div2.innerHTML="<button class=\"start-trivia\">Begin</button>";
 	const ready=document.querySelector(".start-trivia");
 	ready.addEventListener("click",() => showCats())
-	statsDiv.innerHTML=`<p></p>
+	statsDiv.innerHTML=`<p></p>`
 };
 
 start.addEventListener("click",() => rules());
