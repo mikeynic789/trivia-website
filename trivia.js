@@ -63,6 +63,8 @@ function statsBack() {
 	statsDiv.innerHTML=`<button class="stats-btn">Stats</button>`;
  	const stats=document.querySelector(".stats-btn");
 	const start=document.querySelector(".start-button");   
+	stats.addEventListener("click",() => statsFunc());
+	start.addEventListener("click",() => rules());
 }
 stats.addEventListener("click",() => statsFunc());
 
