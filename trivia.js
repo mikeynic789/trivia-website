@@ -1146,9 +1146,9 @@ movies3.push({
 
 movies3.push({
 	question:"<p>What genre of music is played in 'Whiplash'?</p>",
-	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Jazz</label>",
+	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"1\"><label for=\"1\">Jazz</label>",
 	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"2\"><label for=\"2\">Soul</label>",
-	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"3\"><label for=\"3\">Rock</label>",
+	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Rock</label>",
 	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Metal</label>"
 })
 
