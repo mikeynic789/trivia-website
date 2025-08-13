@@ -8,13 +8,24 @@ const choice1=document.querySelector(".choice-1");
 const choice2=document.querySelector(".choice-2");
 const choice3=document.querySelector(".choice-3");
 const choice4=document.querySelector(".choice-4");
-const score=document.querySelector(".score")
+const score=document.querySelector(".score");
 const current=document.querySelector(".current-category");
 const notes=document.querySelector(".notifications");
 const rulesText=document.querySelector(".rules");
 const reset=document.querySelector(".reset-btn");
 const statsDiv=document.querySelector(".stats");
 const stats=document.querySelector(".stats-btn");
+let temp;
+
+let catFreq=JSON.parse(localStorage.getItem("catFreq")) || {
+	"Science":0,
+	"Mathematics":0,
+	"TV Shows":0,
+	"Music":0,
+	"Sports":0,
+	"Movies":0,
+	"Video Games":0
+};
 
 let gamesWon=JSON.parse(localStorage.getItem("gamesWon")) || 0;
 let gamesLost=JSON.parse(localStorage.getItem("gamesLost")) || 0;
@@ -41,6 +52,7 @@ localStorage.setItem("gamesPlayed",JSON.stringify(gamesPlayed));
 localStorage.setItem("qCorrect",JSON.stringify(qCorrect));
 localStorage.setItem("qWrong",JSON.stringify(qWrong));
 localStorage.setItem("qTot",JSON.stringify(qTot));
+localStorage.setItem("catFreq",JSON.stringify(catFreq));
 function resetStorage() {
 	asked=JSON.parse(localStorage.getItem("asked"));
 	asked=[];
@@ -68,6 +80,26 @@ function statsFunc() {
 	qCorrect=JSON.parse(localStorage.getItem("qCorrect"));
 	qWrong=JSON.parse(localStorage.getItem("qWrong"));
 	qTot=JSON.parse(localStorage.getItem("qTot"));
+
+	catFreq=JSON.parse(localStorage.getItem("catFreq"));
+
+	let catFreqArr=Object.entries(catFreq);
+
+	for (let j=0;j<=catFreqArr.length-1;j++) {
+	for (let i=catFreqArr.length-1;i>=0;i--) {
+		if (catFreqArr[i][1]>catFreqArr[j][1]) {
+		temp=catFreqArr[j];
+		catFreqArr[j]=catFreqArr[i];
+		catFreqArr[i]=temp;
+
+		
+		}
+		
+	}
+	}
+	catFreq=Object.fromEntries(catFreqArr);
+	localStorage.setItem("catFreq",JSON.stringify(catFreq));
+	
 	let correctp=(qCorrect/qTot)*100
 	let winp=(gamesWon/gamesPlayed)*100
 	div2.innerHTML=`<h2>Game Stats</h2><br>
@@ -80,7 +112,7 @@ function statsFunc() {
  Answered incorrectly: ${qWrong}<br>
  Questions answered: ${qTot}<br>
  Correct %: ${correctp.toFixed(3)}%</p><br>
- <br>
+ 
  <p>Stats are updated at the completion of each game.</p>`;
 	
 	localStorage.setItem("gamesWon",JSON.stringify(gamesWon));
@@ -147,8 +179,14 @@ function catSelect(n) {					//select categories
 			catOrder.push(videoGames)
 		}
 	};
-	catsOn.innerHTML=`<h3>Selected Categories</h3> <p>${categories[0]}      ${categories[1]}      ${categories[2]}      ${categories[3]}      ${categories[4]}</p>`
-	return
+	catsOn.innerHTML=`<h3>Selected Categories</h3>                              
+<ol>                                                                            
+<li><p>${categories[0] || "Category 1"}</p></li>                                                 
+<li><p>${categories[1] || "Category 2"}</p></li>                                                 
+<li><p>${categories[2] || "Category 3"}</p></li>                                                 
+<li><p>${categories[3] || "Category 4"}</p></li>                                                 
+<li><p>${categories[4] || "Category 5"}</p></li>                                                 
+</ol>`	return
 	};
 
 
@@ -339,9 +377,15 @@ score.innerHTML="<p></p>";
 div2.innerHTML="<p></p>";
 div1.innerHTML="<p></p>";
 catsOn.innerHTML="<p></p>";
-}
-}
 
+		catFreq=JSON.parse(localStorage.getItem("catFreq));
+
+		for (let i=0;i<=4;i++) {
+			catFreq[categories[i]]++
+			 }
+		localStorage.setItem("catFreq",JSON.stringify(catFreq));
+}
+}
 
 let science1=[];
 science1.push({question:"<p>What is the transition from liquid to gas called?</p>",
