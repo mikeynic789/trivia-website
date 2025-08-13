@@ -81,24 +81,12 @@ function statsFunc() {
 	qWrong=JSON.parse(localStorage.getItem("qWrong"));
 	qTot=JSON.parse(localStorage.getItem("qTot"));
 
-	catFreq=JSON.parse(localStorage.getItem("catFreq"));
+	let catFreqArr=Object.entries(JSON.parse(localStorage.getItem("catFreq")));
 
-	let catFreqArr=Object.entries(catFreq);
+	//let catFreqArr=Object.entries(catFreq);
 
-	for (let j=0;j<=catFreqArr.length-1;j++) {
-	for (let i=catFreqArr.length-1;i>=0;i--) {
-		if (catFreqArr[i][1]>catFreqArr[j][1]) {
-		temp=catFreqArr[j];
-		catFreqArr[j]=catFreqArr[i];
-		catFreqArr[i]=temp;
-
-		
-		}
-		
-	}
-	}
-	catFreq=Object.fromEntries(catFreqArr);
-	localStorage.setItem("catFreq",JSON.stringify(catFreq));
+catFreqArr.sort((a,b) => b[1]-a[1]);
+	
 	
 	let correctp=(qCorrect/qTot)*100
 	let winp=(gamesWon/gamesPlayed)*100
@@ -106,12 +94,12 @@ function statsFunc() {
  <p>Games won: ${gamesWon}<br>
  Games lost: ${gamesLost}<br>
  Games played: ${gamesPlayed}<br>
- Win %: ${winp.toFixed(3)}%</p><br>
+ Win %: ${winp.toFixed(3) || "No games played"}%</p><br>
  <h2>Question Stats</h2><br>
  <p>Answered correctly: ${qCorrect}<br>
  Answered incorrectly: ${qWrong}<br>
  Questions answered: ${qTot}<br>
- Correct %: ${correctp.toFixed(3)}%</p><br>
+ Correct %: ${correctp.toFixed(3) || "No games played"}%</p><br>
  <h2>Category Frequency</h2><br>
  <ol>
  <li><p>${catFreqArr[0][0]}: ${catFreqArr[0][1]}</p></li>
@@ -132,6 +120,9 @@ function statsFunc() {
 	localStorage.setItem("qCorrect",JSON.stringify(qCorrect));
 	localStorage.setItem("qWrong",JSON.stringify(qWrong));
 	localStorage.setItem("qTot",JSON.stringify(qTot));
+
+	//catFreq=Object.fromEntries(catFreqArr);
+	//localStorage.setItem("catFreq",JSON.stringify(catFreq));
 	
 	statsDiv.innerHTML=`<button class="back-btn">Back</button>`;
 
@@ -1966,3 +1957,76 @@ videoGames5.push({
 
 
 const videoGames=[videoGames1,videoGames2,videoGames3,videoGames4,videoGames5];
+
+
+/*
+function statsFunc() {
+	gamesWon=JSON.parse(localStorage.getItem("gamesWon"));
+	gamesLost=JSON.parse(localStorage.getItem("gamesLost"));
+	gamesPlayed=JSON.parse(localStorage.getItem("gamesPlayed"));
+
+	qCorrect=JSON.parse(localStorage.getItem("qCorrect"));
+	qWrong=JSON.parse(localStorage.getItem("qWrong"));
+	qTot=JSON.parse(localStorage.getItem("qTot"));
+
+	catFreqArr=Object.entries(JSON.parse(localStorage.getItem("catFreq")));
+
+	//let catFreqArr=Object.entries(catFreq);
+
+	for (let j=0;j<=catFreqArr.length-1;j++) {
+	for (let i=catFreqArr.length-1;i>=0;i--) {
+		if (catFreqArr[i][1]>catFreqArr[j][1]) {
+		temp=catFreqArr[j];
+		catFreqArr[j]=catFreqArr[i];
+		catFreqArr[i]=temp;
+
+		
+		}
+		
+	}
+	}
+	
+	
+	let correctp=(qCorrect/qTot)*100
+	let winp=(gamesWon/gamesPlayed)*100
+	div2.innerHTML=`<h2>Game Stats</h2><br>
+ <p>Games won: ${gamesWon}<br>
+ Games lost: ${gamesLost}<br>
+ Games played: ${gamesPlayed}<br>
+ Win %: ${winp.toFixed(3)}%</p><br>
+ <h2>Question Stats</h2><br>
+ <p>Answered correctly: ${qCorrect}<br>
+ Answered incorrectly: ${qWrong}<br>
+ Questions answered: ${qTot}<br>
+ Correct %: ${correctp.toFixed(3)}%</p><br>
+ <h2>Category Frequency</h2><br>
+ <ol>
+ <li><p>${catFreqArr[0][0]}: ${catFreqArr[0][1]}</p></li>
+ <li><p>${catFreqArr[1][0]}: ${catFreqArr[1][1]}</p></li>
+ <li><p>${catFreqArr[2][0]}: ${catFreqArr[2][1]}</p></li>
+ <li><p>${catFreqArr[3][0]}: ${catFreqArr[3][1]}</p></li>
+ <li><p>${catFreqArr[4][0]}: ${catFreqArr[4][1]}</p></li>
+ <li><p>${catFreqArr[5][0]}: ${catFreqArr[5][1]}</p></li>
+ <li><p>${catFreqArr[6][0]}: ${catFreqArr[6][1]}</p></li>
+ </ol>
+ 
+ <p>Stats are updated at the completion of each game.</p>`;
+	
+	localStorage.setItem("gamesWon",JSON.stringify(gamesWon));
+	localStorage.setItem("gamesLost",JSON.stringify(gamesLost));
+	localStorage.setItem("gamesPlayed",JSON.stringify(gamesPlayed));
+	
+	localStorage.setItem("qCorrect",JSON.stringify(qCorrect));
+	localStorage.setItem("qWrong",JSON.stringify(qWrong));
+	localStorage.setItem("qTot",JSON.stringify(qTot));
+
+	//catFreq=Object.fromEntries(catFreqArr);
+	//localStorage.setItem("catFreq",JSON.stringify(catFreq));
+	
+	statsDiv.innerHTML=`<button class="back-btn">Back</button>`;
+
+	
+
+	const backBtn=document.querySelector(".back-btn");
+	backBtn.addEventListener("click",() => statsBack());
+} */
