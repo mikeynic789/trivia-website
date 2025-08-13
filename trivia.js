@@ -253,7 +253,7 @@ x=Math.floor(Math.random()*5);
 count++
 if (count==100) {
 	asked=[];
-	notes.innerHTML="<p>reset</p>";
+	notes.innerHTML="<p>Question memory cleared</p>";
 }
 }
 
@@ -293,7 +293,7 @@ x=Math.floor(Math.random()*5);
 count++
 if (count==100) {
 	asked=[];
-	notes.innerHTML="<p>reset</p>";
+	notes.innerHTML="<p>Question memory cleared</p>";
 }
 }
 
