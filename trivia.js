@@ -242,7 +242,7 @@ if (categories.length!=5) {
 notes.innerHTML="<p>Select 5 categories</p>";
 	return
 }
-catsOn.innerHTML="<p>1. ${categories[0]}  2. ${categories[1]}  3. ${categories[2]}  4. ${categories[3]}  5. ${categories[4]}</p>";
+catsOn.innerHTML=`<p>1. ${categories[0]}  2. ${categories[1]}  3. ${categories[2]}  4. ${categories[3]}  5. ${categories[4]}</p>`;
 notes.innerHTML="<p></p>";
 			//show first question
 	let count=0;
@@ -1739,7 +1739,7 @@ videoGames1.push({
 	choice1:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"1\"><label for=\"1\">Mario</label>",
 	choice2:"<input type=\"radio\" name=\"choice\" class=\"choice correct\" id=\"2\"><label for=\"2\">Luigi</label>",
 	choice3:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"3\"><label for=\"3\">Waluigi</label>",
-	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Wario/label>"
+	choice4:"<input type=\"radio\" name=\"choice\" class=\"choice\" id=\"4\"><label for=\"4\">Wario</label>"
 })
 
 
