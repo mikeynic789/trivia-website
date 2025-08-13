@@ -112,6 +112,16 @@ function statsFunc() {
  Answered incorrectly: ${qWrong}<br>
  Questions answered: ${qTot}<br>
  Correct %: ${correctp.toFixed(3)}%</p><br>
+ <h2>Category Frequency</h2><br>
+ <ol>
+ <li><p>${catFreqArr[0][0]}: ${catFreqArr[0][1]}</p></li>
+ <li><p>${catFreqArr[1][0]}: ${catFreqArr[1][1]}</p></li>
+ <li><p>${catFreqArr[2][0]}: ${catFreqArr[2][1]}</p></li>
+ <li><p>${catFreqArr[3][0]}: ${catFreqArr[3][1]}</p></li>
+ <li><p>${catFreqArr[4][0]}: ${catFreqArr[4][1]}</p></li>
+ <li><p>${catFreqArr[5][0]}: ${catFreqArr[5][1]}</p></li>
+ <li><p>${catFreqArr[6][0]}: ${catFreqArr[6][1]}</p></li>
+ </ol>
  
  <p>Stats are updated at the completion of each game.</p>`;
 	
