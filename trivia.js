@@ -196,7 +196,8 @@ function catSelect(n) {					//select categories
 <li><p>${categories[2] || "Category 3"}</p></li>                                                 
 <li><p>${categories[3] || "Category 4"}</p></li>                                                 
 <li><p>${categories[4] || "Category 5"}</p></li>                                                 
-</ol>`	return
+</ol>`;
+		return
 	};
 
 
@@ -250,7 +251,8 @@ if (categories.length!=5) {
 notes.innerHTML="<p>Select 5 categories</p>";
 	return
 }
-notes.innerHTML="<p></p>"
+catsOn.innerHTML="<p></p>";
+notes.innerHTML="<p></p>";
 			//show first question
 	let count=0;
 	let x=Math.floor(Math.random()*5);
@@ -388,7 +390,7 @@ div2.innerHTML="<p></p>";
 div1.innerHTML="<p></p>";
 catsOn.innerHTML="<p></p>";
 
-		catFreq=JSON.parse(localStorage.getItem("catFreq));
+		catFreq=JSON.parse(localStorage.getItem("catFreq"));
 
 		for (let i=0;i<=4;i++) {
 			catFreq[categories[i]]++
